@@ -5,10 +5,22 @@
  */
 package de.mrcookiewarrior.lobby.main.Main;
 
+import org.bukkit.plugin.java.JavaPlugin;
+
 /**
  *
  * @author DieSeNse14
  */
-public class Main {
+public class Main extends JavaPlugin {
     
+    public static Main Instance;
+    
+    @Override
+    public void onEnable() {
+        
+    }
+    @Override
+    public void onDisable() {
+        
+    }
 }
