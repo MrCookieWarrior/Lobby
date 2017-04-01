@@ -15,9 +15,9 @@ Lobby:
     AllowServerChat: true
 ##############################################################
 Messages:
-    JoinMessage: "&e%player% &ajoined the game!"
-    QuitMessage: "&c%player% &4left the game!"
-    NoPermCommand: "&ci´m sorry, but ypu do not have permission to perform this command!"
+    JoinMessage: "&e%player% &aJoined the game!"
+    QuitMessage: "&c%player% &4Left the game!"
+    NoPermCommand: "&cI´m sorry, but you do not have permission to perform this command!"
     NoPermBuild: "&cYou can't build here"
 ##############################################################
 Title:
