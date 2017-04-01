@@ -6,6 +6,7 @@
 package de.mrcookiewarrior.lobby.listener;
 
 import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.manager.ScoreboardManager;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -18,6 +19,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerListener implements Listener {
     @EventHandler
     public void onJoin(PlayerJoinEvent e) {
+        ScoreboardManager.setJoinScoreboard(e.getPlayer());
         if(Main.getLobby().AllowJoinMessage == true) {
             String join = Main.getLobby().JoinMessage;
             join = join.replaceFirst("%player%", e.getPlayer().getDisplayName());
