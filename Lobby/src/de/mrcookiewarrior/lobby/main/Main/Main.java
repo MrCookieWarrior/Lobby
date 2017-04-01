@@ -5,7 +5,10 @@
  */
 package de.mrcookiewarrior.lobby.main.Main;
 
+import de.mrcookiewarrior.lobby.listener.PlayerListener;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -19,6 +22,10 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Instance = this;
+    }
+    public void registerEvents() {
+        PluginManager pm = Bukkit.getPluginManager();
+        pm.registerEvents(new PlayerListener(), this);
     }
     @Override
     public void onDisable() {
