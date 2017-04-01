@@ -7,6 +7,18 @@ Lobby:
     Prefix: "&8[&eLobby&aSystem&8] &f"
     AllowJoinMessage: true
     AllowQuitMessage: true
+##############################################################
 Messages:
-    JoinMessage: "&e%player% &ahat den Server betreten!"
-    QuitMessage: "&c%player% &4hat den Server verlassen!"
+    JoinMessage: "&e%player% &ajoined the game!"
+    QuitMessage: "&c%player% &4left the game!"
+    NoPermCommand: "&ci´m sorry, but ypu do not have permission to perform this command!"
+    NoPermBuild: "&cYou can't build here"
+##############################################################
+Title:
+    Header: ""
+    Footer: ""
+##############################################################
+MOTD:
+    Header: ""
+    Footer: ""
+##############################################################
