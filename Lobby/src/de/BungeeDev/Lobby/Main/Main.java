@@ -52,6 +52,7 @@ public class Main extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§l");
         Bukkit.getConsoleSender().sendMessage("§9---------- §3LobbySystem §9----------");
         Bukkit.getConsoleSender().sendMessage("§l ");
+        Bukkit.getConsoleSender().sendMessage("§7Version: §e" + Main.Instance.getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§7TeamSpeak: §eCeriox.de");
         Bukkit.getConsoleSender().sendMessage("§7YouTube: §eBungeeDev");
         Bukkit.getConsoleSender().sendMessage("§7Website: §ewww.ceriox.de");
