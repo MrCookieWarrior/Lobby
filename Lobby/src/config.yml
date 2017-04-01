@@ -1,8 +1,8 @@
-###########################################
+##############################################################
 # LobbySystem
 # Created by BungeeDev aka MrCookieWarrior
 # Development begin on 01.04.17
-###########################################
+##############################################################
 Lobby:
     Prefix: "&8[&eLobby&aSystem&8] &f"
     AllowJoinMessage: true
@@ -14,6 +14,10 @@ Lobby:
     MaxPlayer: 15
     AllowServerChat: true
     BungeeCord: true
+    ServerName: "&3YouServer.net"
+    Forum: "&6YourServer.net"
+    TeamSpeak: "&2YourServer.net"
+    LevelName: "world"
 ##############################################################
 Messages:
     JoinMessage: "&e%player% &aJoined the game!"
