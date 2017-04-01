@@ -1,4 +1,4 @@
 name: Lobby
 author: MrCookieWarrior
 version: 1.0
-main: de.MrCookieWarrior.Lobby.Main.Lobby
+main: de.mrcookiewarrior.lobby.main.Main
