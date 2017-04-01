@@ -15,7 +15,7 @@ public class ScoreboardFileManager {
 	public static FileConfiguration conf;
 	
 	public static void createScoreboardFile() {
-		setting_file = new File("plugins//EasyServerManager", "Scoreboard.yml");
+		setting_file = new File("plugins//Lobby", "Scoreboard.yml");
 		conf = YamlConfiguration.loadConfiguration(setting_file);
 	}
 	public static void saveScoreboardFile() {

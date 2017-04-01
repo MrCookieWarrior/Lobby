@@ -150,7 +150,7 @@ public class MySQL
   
   public static File getMySQLFile()
   {
-    return new File("plugins/LobbySystem", "MySQL.yml");
+    return new File("plugins/Lobby", "MySQL.yml");
   }
   
   public static FileConfiguration getMySQLFileConfiguration()

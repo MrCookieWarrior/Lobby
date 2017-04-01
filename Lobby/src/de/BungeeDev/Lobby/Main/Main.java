@@ -58,7 +58,7 @@ public class Main extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§7Website: §ewww.ceriox.de");
         Bukkit.getConsoleSender().sendMessage("§7Skype: §eSeelenfresser8");
         Bukkit.getConsoleSender().sendMessage("§7Minecraft-Name §eBungeeDev");
-        Bukkit.getConsoleSender().sendMessage("§9-------------------------------------");
+        Bukkit.getConsoleSender().sendMessage("§9----------------------------------");
     }
     public static Main getLobby() {
         return Instance;
