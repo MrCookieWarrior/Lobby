@@ -8,6 +8,7 @@ package de.BungeeDev.Lobby.Main;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
+import de.mrcookiewarrior.lobby.manager.ScoreboardFileManager;
 import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -25,9 +26,10 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Instance = this;
-        
+        ScoreboardFileManager.createScoreboardFile();
+	ScoreboardFileManager.addDefaults();
         if (!new File(getDataFolder(), "config.yml").exists()) {
-      saveResource("config.yml", true);
+        saveResource("config.yml", true);
     }
         MySQL.readMySQL();
         MySQL.setStandardMySQL();
