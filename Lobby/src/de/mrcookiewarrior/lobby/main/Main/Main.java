@@ -17,10 +17,13 @@ public class Main extends JavaPlugin {
     
     @Override
     public void onEnable() {
-        
+        Instance = this;
     }
     @Override
     public void onDisable() {
         
+    }
+    public static Main getLobby() {
+        return Instance;
     }
 }
