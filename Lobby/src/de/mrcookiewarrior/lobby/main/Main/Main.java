@@ -6,6 +6,7 @@
 package de.mrcookiewarrior.lobby.main.Main;
 
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
+import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.PluginManager;
@@ -22,6 +23,9 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Instance = this;
+        if (!new File(getDataFolder(), "config.yml").exists()) {
+      saveResource("config.yml", true);
+    }
     }
     public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
