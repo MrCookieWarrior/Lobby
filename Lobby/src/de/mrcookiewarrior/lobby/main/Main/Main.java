@@ -5,7 +5,7 @@
  */
 package de.mrcookiewarrior.lobby.main.Main;
 
-import net.md_5.bungee.api.ChatColor;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
