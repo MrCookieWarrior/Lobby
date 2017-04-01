@@ -5,6 +5,7 @@
  */
 package de.mrcookiewarrior.lobby.main.Main;
 
+import net.md_5.bungee.api.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
@@ -26,4 +27,9 @@ public class Main extends JavaPlugin {
     public static Main getLobby() {
         return Instance;
     }
+    public String Prefix = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Lobby.Prefix"));
+    public boolean AllowJoinMessage = getConfig().getBoolean("Lobby.AllowJoinMessage");
+    public boolean AllowQuitMessage = getConfig().getBoolean("Lobby.AllowQuitMessage");
+    public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
+    public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
 }
