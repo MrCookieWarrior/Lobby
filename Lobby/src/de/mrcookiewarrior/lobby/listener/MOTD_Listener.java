@@ -12,7 +12,7 @@ import org.bukkit.event.server.ServerListPingEvent;
 
 /**
  *
- * @author DieSeNse14
+ * @author BungeeDev
  */
 public class MOTD_Listener implements Listener {
  

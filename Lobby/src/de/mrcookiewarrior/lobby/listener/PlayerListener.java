@@ -13,7 +13,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 /**
  *
- * @author DieSeNse14
+ * @author BungeeDev
  */
 public class PlayerListener implements Listener {
     @EventHandler
