@@ -7,6 +7,7 @@ package de.BungeeDev.Lobby.Main;
 
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
+import de.mrcookiewarrior.lobby.manager.MySQL;
 import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,9 +25,15 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Instance = this;
+        
         if (!new File(getDataFolder(), "config.yml").exists()) {
       saveResource("config.yml", true);
     }
+        MySQL.readMySQL();
+        MySQL.setStandardMySQL();
+        MySQL.connect();
+        MySQL.createTableBanSystem();
+        MySQL.createTableMuteSystem();
     }
     public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
@@ -52,7 +59,12 @@ public class Main extends JavaPlugin {
     public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
     public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
     public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Tablist.Header"));
-    public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Tablist.Footer"));
+    public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Tablist.Footer"));    
+    public String LevelName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Lobby.LevelName"));
+    public String ServerName = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Lobby.ServerName"));
+    public String Forum = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Lobby.Forum"));
+    public String TeamSpeak = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Lobby.TeamSpeak"));
+    public boolean BungeeCord = getConfig().getBoolean("Lobby.BungeeCord");
     public int MaxPlayers = getConfig().getInt("Lobby.MaxPlayer");
     public boolean AllowFood = getConfig().getBoolean("Lobby.AllowFood");
     public boolean AllowServerChat = getConfig().getBoolean("Lobby.AllowServerChat");

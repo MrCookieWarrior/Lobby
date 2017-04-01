@@ -13,6 +13,7 @@ Lobby:
     AllowPremiumChat: true
     MaxPlayer: 15
     AllowServerChat: true
+    BungeeCord: true
 ##############################################################
 Messages:
     JoinMessage: "&e%player% &aJoined the game!"
