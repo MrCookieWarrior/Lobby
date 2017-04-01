@@ -36,6 +36,8 @@ public class Main extends JavaPlugin {
         MySQL.connect();
         MySQL.createTableBanSystem();
         MySQL.createTableMuteSystem();
+        registerEvents();
+        pluginMessage();
     }
     public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
@@ -44,7 +46,18 @@ public class Main extends JavaPlugin {
     }
     @Override
     public void onDisable() {
-        
+        pluginMessage();
+    }
+    public void pluginMessage() {
+        Bukkit.getConsoleSender().sendMessage("§l");
+        Bukkit.getConsoleSender().sendMessage("§9---------- §3LobbySystem §9----------");
+        Bukkit.getConsoleSender().sendMessage("§l ");
+        Bukkit.getConsoleSender().sendMessage("§7TeamSpeak: §eCeriox.de");
+        Bukkit.getConsoleSender().sendMessage("§7YouTube: §eBungeeDev");
+        Bukkit.getConsoleSender().sendMessage("§7Website: §ewww.ceriox.de");
+        Bukkit.getConsoleSender().sendMessage("§7Skype: §eSeelenfresser8");
+        Bukkit.getConsoleSender().sendMessage("§7Minecraft-Name §eBungeeDev");
+        Bukkit.getConsoleSender().sendMessage("§9-------------------------------------");
     }
     public static Main getLobby() {
         return Instance;
