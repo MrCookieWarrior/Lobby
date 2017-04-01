@@ -7,6 +7,12 @@ Lobby:
     Prefix: "&8[&eLobby&aSystem&8] &f"
     AllowJoinMessage: true
     AllowQuitMessage: true
+    AllowFood: false
+    AllowWeatherChange: false
+    AllowMobSpawming: false
+    AllowPremiumChat: true
+    MaxPlayer: 15
+    AllowServerChat: true
 ##############################################################
 Messages:
     JoinMessage: "&e%player% &ajoined the game!"
@@ -15,6 +21,10 @@ Messages:
     NoPermBuild: "&cYou can't build here"
 ##############################################################
 Title:
+    Header: ""
+    Footer: ""
+##############################################################
+Tablist:
     Header: ""
     Footer: ""
 ##############################################################
