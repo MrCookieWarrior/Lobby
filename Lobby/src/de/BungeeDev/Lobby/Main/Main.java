@@ -5,6 +5,7 @@
  */
 package de.BungeeDev.Lobby.Main;
 
+import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import java.io.File;
 import org.bukkit.Bukkit;
@@ -30,6 +31,7 @@ public class Main extends JavaPlugin {
     public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerListener(), this);
+        pm.registerEvents(new MOTD_Listener(), this);
     }
     @Override
     public void onDisable() {
