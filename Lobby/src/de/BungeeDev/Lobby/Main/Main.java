@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.mrcookiewarrior.lobby.main.Main;
+package de.BungeeDev.Lobby.Main;
 
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import java.io.File;
