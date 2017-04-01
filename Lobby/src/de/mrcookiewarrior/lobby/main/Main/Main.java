@@ -39,4 +39,18 @@ public class Main extends JavaPlugin {
     public boolean AllowQuitMessage = getConfig().getBoolean("Lobby.AllowQuitMessage");
     public String JoinMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.JoinMessage"));
     public String QuitMessage = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.QuitMessage"));
+    public String MOTDHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MOTD.Header"));
+    public String MOTDFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("MOTD.Footer"));
+    public String NoPermCMD = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.NoPermCommand"));
+    public String NoPermBuild = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Messages.NoPermBuild"));
+    public String TitleHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Header"));
+    public String TitleFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Title.Footer"));
+    public String TabHeader = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Tablist.Header"));
+    public String TabFooter = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Tablist.Footer"));
+    public int MaxPlayers = getConfig().getInt("Lobby.MaxPlayer");
+    public boolean AllowFood = getConfig().getBoolean("Lobby.AllowFood");
+    public boolean AllowServerChat = getConfig().getBoolean("Lobby.AllowServerChat");
+    public boolean AllowWeatherChange = getConfig().getBoolean("Lobby.AllowWeatherChange");
+    public boolean AllowMobSpawning = getConfig().getBoolean("Lobby.AllowMobSpawming");
+    public boolean AllowPremiumChat = getConfig().getBoolean("Lobby.AllowPremiumChat");
 }
