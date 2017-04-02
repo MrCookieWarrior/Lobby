@@ -10,6 +10,7 @@ import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
 import de.mrcookiewarrior.lobby.manager.ScoreboardFileManager;
+import de.mrcookiewarrior.lobby.manager.utils_Navigator;
 import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -45,6 +46,7 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new MOTD_Listener(), this);
+        pm.registerEvents(new utils_Navigator(), this);
     }
     public void registerCommands() {
         this.getCommand("ban").setExecutor(new CMD_Ban());
