@@ -5,6 +5,7 @@
  */
 package de.mrcookiewarrior.lobby.manager;
 
+import de.mrcookiewarrior.lobby.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.DisplaySlot;
@@ -59,118 +60,120 @@ public class ScoreboardManager {
         
         p.setScoreboard(board);
         
-        Team owner = board.registerNewTeam("aaa");
-		Team admin = board.registerNewTeam("bbb");
-		Team developer = board.registerNewTeam("ccc");
-		Team srmoderator = board.registerNewTeam("ddd");
-		Team moderator = board.registerNewTeam("eee");
-		Team supporter = board.registerNewTeam("fff");
-		Team srbuilder = board.registerNewTeam("ggg");
-		Team builder = board.registerNewTeam("hhh");
-		Team youtuber = board.registerNewTeam("jjj");
-		Team premium = board.registerNewTeam("kkk");
-		Team spieler = board.registerNewTeam("lll");
+            Team owner = board.registerNewTeam("aaa");
+            Team admin = board.registerNewTeam("bbb");
+            Team srdeveloper = board.registerNewTeam("ccc");
+            Team developer = board.registerNewTeam("ddd");
+            Team srmoderator = board.registerNewTeam("eee");
+            Team moderator = board.registerNewTeam("fff");
+            Team srsupporter = board.registerNewTeam("ggg");
+            Team supporter = board.registerNewTeam("hhh");
+            Team srbuilder = board.registerNewTeam("iii");
+            Team builder = board.registerNewTeam("jjj");
+            Team youtuber = board.registerNewTeam("kkk");
+            Team premium = board.registerNewTeam("lll");
+            Team spieler = board.registerNewTeam("mmm");
 		
 		for (Player all : Bukkit.getOnlinePlayers()) {
 			if (PermissionsEx.getUser(all).inGroup("Owner")) {
-				owner.setPrefix("§4Owner §7» §4");
-				owner.addPlayer(all);
-				
+				owner.setPrefix(Main.getLobby().Owner);
+				owner.addPlayer(all);				
 			} else if (PermissionsEx.getUser(all).inGroup("Admin")) {
-				admin.setPrefix("§4Admin §7» §4");
+				admin.setPrefix(Main.getLobby().Admin);
 				admin.addPlayer(all);
+			} else if (PermissionsEx.getUser(all).inGroup("SrDeveloper")) {
+				srdeveloper.setPrefix(Main.getLobby().SrDev);
+				srdeveloper.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Developer")) {
-				developer.setPrefix("§bDev §7» §b");
+				developer.setPrefix(Main.getLobby().Dev);
 				developer.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("SrModerator")) {
-				srmoderator.setPrefix("§cSrMod §7» §c");
+				srmoderator.setPrefix(Main.getLobby().SrMod);
 				srmoderator.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Moderator")) {
-				moderator.setPrefix("§cMod §7» §c");
+				moderator.setPrefix(Main.getLobby().Mod);
 				moderator.addPlayer(all);
+			} else if (PermissionsEx.getUser(all).inGroup("SrSupporter")) {
+				srsupporter.setPrefix(Main.getLobby().SrSupp);
+				srsupporter.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Supporter")) {
-				supporter.setPrefix("§9Supp §7» §9");
+				supporter.setPrefix(Main.getLobby().Supp);
 				supporter.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("SrBuilder")) {
-				srbuilder.setPrefix("§eSrBuilder §7» §e");
+				srbuilder.setPrefix(Main.getLobby().SrBuilder);
 				srbuilder.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("Builder")) {
-				builder.setPrefix("§eBuilder §7» §e");
+				builder.setPrefix(Main.getLobby().Builder);
 				builder.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("YouTuber")) {
-				youtuber.setPrefix("§5");
+				youtuber.setPrefix(Main.getLobby().YouTuber);
 				youtuber.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("Premium")) {
-				premium.setPrefix("§6");
+				premium.setPrefix(Main.getLobby().Premium);
 				premium.addPlayer(all);
-				
 			}  else {
-				spieler.setPrefix("§8");
+				spieler.setPrefix(Main.getLobby().Spieler);
 				spieler.addPlayer(all);
-				
 			}
     }
 	}
 	public static void setScoreNull(Player p) {
         p.setScoreboard(null);
         
-        Team owner = board.registerNewTeam("aaa");
-		Team admin = board.registerNewTeam("bbb");
-		Team developer = board.registerNewTeam("ccc");
-		Team srmoderator = board.registerNewTeam("ddd");
-		Team moderator = board.registerNewTeam("eee");
-		Team supporter = board.registerNewTeam("fff");
-		Team srbuilder = board.registerNewTeam("ggg");
-		Team builder = board.registerNewTeam("hhh");
-		Team youtuber = board.registerNewTeam("jjj");
-		Team premium = board.registerNewTeam("kkk");
-		Team spieler = board.registerNewTeam("lll");
+            Team owner = board.registerNewTeam("aaa");
+            Team admin = board.registerNewTeam("bbb");
+            Team srdeveloper = board.registerNewTeam("ccc");
+            Team developer = board.registerNewTeam("ddd");
+            Team srmoderator = board.registerNewTeam("eee");
+            Team moderator = board.registerNewTeam("fff");
+            Team srsupporter = board.registerNewTeam("ggg");
+            Team supporter = board.registerNewTeam("hhh");
+            Team srbuilder = board.registerNewTeam("iii");
+            Team builder = board.registerNewTeam("jjj");
+            Team youtuber = board.registerNewTeam("kkk");
+            Team premium = board.registerNewTeam("lll");
+            Team spieler = board.registerNewTeam("mmm");
 		
 		for (Player all : Bukkit.getOnlinePlayers()) {
 			if (PermissionsEx.getUser(all).inGroup("Owner")) {
-				owner.setPrefix("§4Owner §7» §4");
-				owner.addPlayer(all);
-				
+				owner.setPrefix(Main.getLobby().Owner);
+				owner.addPlayer(all);				
 			} else if (PermissionsEx.getUser(all).inGroup("Admin")) {
-				admin.setPrefix("§4Admin §7» §4");
+				admin.setPrefix(Main.getLobby().Admin);
 				admin.addPlayer(all);
+			} else if (PermissionsEx.getUser(all).inGroup("SrDeveloper")) {
+				srdeveloper.setPrefix(Main.getLobby().SrDev);
+				srdeveloper.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Developer")) {
-				developer.setPrefix("§bDev §7» §b");
+				developer.setPrefix(Main.getLobby().Dev);
 				developer.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("SrModerator")) {
-				srmoderator.setPrefix("§cSrMod §7» §c");
+				srmoderator.setPrefix(Main.getLobby().SrMod);
 				srmoderator.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Moderator")) {
-				moderator.setPrefix("§cMod §7» §c");
+				moderator.setPrefix(Main.getLobby().Mod);
 				moderator.addPlayer(all);
+			} else if (PermissionsEx.getUser(all).inGroup("SrSupporter")) {
+				srsupporter.setPrefix(Main.getLobby().SrSupp);
+				srsupporter.addPlayer(all);
 			} else if (PermissionsEx.getUser(all).inGroup("Supporter")) {
-				supporter.setPrefix("§9Supp §7» §9");
+				supporter.setPrefix(Main.getLobby().Supp);
 				supporter.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("SrBuilder")) {
-				srbuilder.setPrefix("§eSrBuilder §7» §e");
+				srbuilder.setPrefix(Main.getLobby().SrBuilder);
 				srbuilder.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("Builder")) {
-				builder.setPrefix("§eBuilder §7» §e");
+				builder.setPrefix(Main.getLobby().Builder);
 				builder.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("YouTuber")) {
-				youtuber.setPrefix("§5");
+				youtuber.setPrefix(Main.getLobby().YouTuber);
 				youtuber.addPlayer(all);
-				
 			} else if (PermissionsEx.getUser(all).inGroup("Premium")) {
-				premium.setPrefix("§6");
+				premium.setPrefix(Main.getLobby().Premium);
 				premium.addPlayer(all);
-				
 			}  else {
-				spieler.setPrefix("§8");
+				spieler.setPrefix(Main.getLobby().Spieler);
 				spieler.addPlayer(all);
-				
 			}
     }
 	}
