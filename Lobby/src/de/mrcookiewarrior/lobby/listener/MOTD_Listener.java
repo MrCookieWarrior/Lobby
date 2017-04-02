@@ -5,7 +5,7 @@
  */
 package de.mrcookiewarrior.lobby.listener;
 
-import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.main.Main;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.server.ServerListPingEvent;

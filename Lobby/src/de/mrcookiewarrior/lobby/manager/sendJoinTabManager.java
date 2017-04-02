@@ -1,6 +1,6 @@
 package de.mrcookiewarrior.lobby.manager;
 
-import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.main.Main;
 import java.lang.reflect.Field;
 
 import org.bukkit.Bukkit;

@@ -5,7 +5,8 @@
  */
 package de.mrcookiewarrior.lobby.listener;
 
-import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.main.Main;
+import de.mrcookiewarrior.lobby.api.ItemAPI;
 import de.mrcookiewarrior.lobby.api.TitleAPI;
 import de.mrcookiewarrior.lobby.manager.ScoreboardManager;
 import de.mrcookiewarrior.lobby.manager.sendJoinTabManager;
@@ -23,6 +24,7 @@ public class PlayerListener implements Listener {
     public void onJoin(PlayerJoinEvent e) {
         ScoreboardManager.setJoinScoreboard(e.getPlayer());
         sendJoinTabManager.createNormalTabList();
+        ItemAPI.setLobbyItem(e.getPlayer());
         TitleAPI.sendJoinTitle(e.getPlayer(), Integer.valueOf(70), Integer.valueOf(40), Integer.valueOf(50), Main.getLobby().TitleHeader, Main.getLobby().TitleFooter);
         if(Main.getLobby().AllowJoinMessage == true) {
             String join = Main.getLobby().JoinMessage;

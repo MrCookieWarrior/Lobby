@@ -2,3 +2,8 @@ name: Lobby
 author: MrCookieWarrior
 version: 1.0
 main: de.BungeeDev.Lobby.Main.Main
+commands:
+    warp:
+        description:
+    ban:
+        description:

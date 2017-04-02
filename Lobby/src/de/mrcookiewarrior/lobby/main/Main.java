@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.BungeeDev.Lobby.Main;
+package de.mrcookiewarrior.lobby.main;
 
 import de.mrcookiewarrior.lobby.commands.CMD_Ban;
+import de.mrcookiewarrior.lobby.commands.CMD_Warp;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
 import de.mrcookiewarrior.lobby.manager.ScoreboardFileManager;
+import de.mrcookiewarrior.lobby.manager.WarpManager;
 import de.mrcookiewarrior.lobby.manager.utils_Navigator;
 import java.io.File;
 import org.bukkit.Bukkit;
@@ -30,6 +32,7 @@ public class Main extends JavaPlugin {
         Instance = this;
         ScoreboardFileManager.createScoreboardFile();
 	ScoreboardFileManager.addDefaults();
+        WarpManager.saveWarpFile();
         if (!new File(getDataFolder(), "config.yml").exists()) {
         saveResource("config.yml", true);
     }
@@ -50,6 +53,7 @@ public class Main extends JavaPlugin {
     }
     public void registerCommands() {
         this.getCommand("ban").setExecutor(new CMD_Ban());
+        this.getCommand("warp").setExecutor(new CMD_Warp());
     }
     @Override
     public void onDisable() {

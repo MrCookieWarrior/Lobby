@@ -1,6 +1,6 @@
 package de.mrcookiewarrior.lobby.manager;
 
-import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.main.Main;
 import de.mrcookiewarrior.lobby.api.ItemAPI;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

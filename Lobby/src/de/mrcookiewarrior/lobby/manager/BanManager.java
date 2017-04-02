@@ -1,6 +1,6 @@
 package de.mrcookiewarrior.lobby.manager;
 
-import de.BungeeDev.Lobby.Main.Main;
+import de.mrcookiewarrior.lobby.main.Main;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
