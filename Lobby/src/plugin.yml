@@ -1,7 +1,7 @@
 name: Lobby
 author: MrCookieWarrior
 version: 1.0
-main: de.BungeeDev.Lobby.Main.Main
+main: de.mrcookiewarrior.lobby.main.Main
 commands:
     warp:
         description:

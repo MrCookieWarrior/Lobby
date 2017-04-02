@@ -59,13 +59,11 @@ public void oncomp(InventoryClickEvent e)
   Player p = (Player)e.getWhoClicked();
   if (e.getInventory().getName().equalsIgnoreCase("Navigator"))
   {
-    if (e.getCurrentItem().getType().equals(Material.REDSTONE)) {
-        if(!WarpManager.existWarpPoint("Team")) {
+    if (e.getCurrentItem().getType().equals(Material.REDSTONE) && WarpManager.existWarpPoint("Team")) {
+            WarpManager.TeleportToWarpPoint(p, "Team");         
+        } else if(e.getCurrentItem().getType().equals(Material.REDSTONE) && !WarpManager.existWarpPoint("Team")) {
             e.setCancelled(true);
             p.sendMessage(Main.getLobby().Prefix + "§4ERROR: §cDieser Warp muss noch gesetzt werden! §eBitte mache dazu §7/setwarp Team");
-        } else {
-            WarpManager.TeleportToWarpPoint(p, "Team");
-        }
     }
     if (e.getCurrentItem().getType().equals(Material.GRASS)) {
         if(!WarpManager.existWarpPoint("SkyBlock")) {
