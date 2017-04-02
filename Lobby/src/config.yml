@@ -4,6 +4,7 @@
 # Development begin on 01.04.17
 # The support of the developer is unfortunately only in German
 # Support on TeamSpeak ceriox.de
+# Minecraft version tested on 1.8 and 1.9
 ##############################################################
 Lobby:
     Prefix: "&8[&eLobby&aSystem&8] &f"
