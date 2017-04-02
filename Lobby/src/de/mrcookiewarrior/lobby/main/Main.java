@@ -8,6 +8,8 @@ package de.mrcookiewarrior.lobby.main;
 import de.mrcookiewarrior.lobby.commands.CMD_Ban;
 import de.mrcookiewarrior.lobby.commands.CMD_Check;
 import de.mrcookiewarrior.lobby.commands.CMD_Mute;
+import de.mrcookiewarrior.lobby.commands.CMD_Unban;
+import de.mrcookiewarrior.lobby.commands.CMD_Unmute;
 import de.mrcookiewarrior.lobby.commands.CMD_Warp;
 import de.mrcookiewarrior.lobby.listener.ChatListener;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
@@ -60,6 +62,8 @@ public class Main extends JavaPlugin {
         this.getCommand("warp").setExecutor(new CMD_Warp());
         this.getCommand("mute").setExecutor(new CMD_Mute());
         this.getCommand("check").setExecutor(new CMD_Check());
+        this.getCommand("unban").setExecutor(new CMD_Unban());
+        this.getCommand("unmute").setExecutor(new CMD_Unmute());
     }
     @Override
     public void onDisable() {

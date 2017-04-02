@@ -7,3 +7,11 @@ commands:
         description:
     ban:
         description:
+    check:
+        description:
+    unban:
+        descrption:
+    unmute:
+        description:
+    mute:
+        descrption:
