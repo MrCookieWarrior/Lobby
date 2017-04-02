@@ -5,6 +5,7 @@
  */
 package de.BungeeDev.Lobby.Main;
 
+import de.mrcookiewarrior.lobby.commands.CMD_Ban;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
@@ -46,7 +47,7 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new MOTD_Listener(), this);
     }
     public void registerCommands() {
-        
+        this.getCommand("ban").setExecutor(new CMD_Ban());
     }
     @Override
     public void onDisable() {
