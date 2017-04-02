@@ -11,14 +11,11 @@ import de.mrcookiewarrior.lobby.commands.CMD_Kick;
 import de.mrcookiewarrior.lobby.commands.CMD_Mute;
 import de.mrcookiewarrior.lobby.commands.CMD_Unban;
 import de.mrcookiewarrior.lobby.commands.CMD_Unmute;
-import de.mrcookiewarrior.lobby.commands.CMD_Warp;
 import de.mrcookiewarrior.lobby.listener.ChatListener;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
 import de.mrcookiewarrior.lobby.manager.ScoreboardFileManager;
-import de.mrcookiewarrior.lobby.manager.WarpManager;
-import de.mrcookiewarrior.lobby.manager.utils_Navigator;
 import java.io.File;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -38,7 +35,6 @@ public class Main extends JavaPlugin {
         Instance = this;
         ScoreboardFileManager.createScoreboardFile();
 	ScoreboardFileManager.addDefaults();
-        WarpManager.saveWarpFile();
         if (!new File(getDataFolder(), "config.yml").exists()) {
         saveResource("config.yml", true);
     }
@@ -55,12 +51,10 @@ public class Main extends JavaPlugin {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new MOTD_Listener(), this);
-        pm.registerEvents(new utils_Navigator(), this);
         pm.registerEvents(new ChatListener(), this);
     }
     public void registerCommands() {
         this.getCommand("ban").setExecutor(new CMD_Ban());
-        this.getCommand("warp").setExecutor(new CMD_Warp());
         this.getCommand("mute").setExecutor(new CMD_Mute());
         this.getCommand("check").setExecutor(new CMD_Check());
         this.getCommand("unban").setExecutor(new CMD_Unban());
