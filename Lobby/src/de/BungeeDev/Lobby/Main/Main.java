@@ -37,12 +37,16 @@ public class Main extends JavaPlugin {
         MySQL.createTableBanSystem();
         MySQL.createTableMuteSystem();
         registerEvents();
+        registerCommands();
         pluginMessage();
     }
     public void registerEvents() {
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new MOTD_Listener(), this);
+    }
+    public void registerCommands() {
+        
     }
     @Override
     public void onDisable() {
