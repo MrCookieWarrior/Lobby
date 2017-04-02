@@ -26,12 +26,12 @@ Messages:
     NoPermBuild: "&cYou can't build here"
 ##############################################################
 Title:
-    Header: ""
-    Footer: ""
+    Header: "&3Hello this plugin is OpenSource!"
+    Footer: "&cYou must have Pex on your server"
 ##############################################################
 Tablist:
-    Header: ""
-    Footer: ""
+    Header: "&2Welcome to my server: &eCeriox.de"
+    Footer: "&7Our Forum: &ewww.ceriox.de\n&7Our TeamSpeak &eceriox.de"
 ##############################################################
 MOTD:
     Header: ""
