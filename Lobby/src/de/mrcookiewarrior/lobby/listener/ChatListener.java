@@ -5,7 +5,9 @@
  */
 package de.mrcookiewarrior.lobby.listener;
 
+import de.mrcookiewarrior.lobby.main.Main;
 import de.mrcookiewarrior.lobby.manager.MuteManager;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -30,5 +32,20 @@ public class ChatListener implements Listener {
                 e.getPlayer().sendMessage("§e--------------------------------");
         }
         }
-    }    
+    }
+    @EventHandler
+    public void onServerChat(AsyncPlayerChatEvent e) {
+        if((Main.getLobby().BungeeCord) && (Main.getLobby().AllowServerChat)) {
+            e.setCancelled(true);
+            e.getPlayer().sendMessage(Main.getLobby().Prefix + "§cDer ServerChat wurde auf dem Server deativiert!");
+        } else if((!Main.getLobby().BungeeCord) && (Main.getLobby().AllowServerChat)) {
+            Player p = e.getPlayer();
+            if(p.getWorld().getName().contains(Main.getLobby().LevelName)) {
+                e.setCancelled(true);
+                p.sendMessage(Main.getLobby().Prefix + "§cDer Chat wurde auf dieser Welt ausgeschaltet!");
+            }
+        } else {
+            e.setCancelled(false);
+        }
+    }
 }
