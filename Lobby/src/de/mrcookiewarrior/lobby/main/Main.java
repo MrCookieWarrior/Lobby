@@ -6,7 +6,9 @@
 package de.mrcookiewarrior.lobby.main;
 
 import de.mrcookiewarrior.lobby.commands.CMD_Ban;
+import de.mrcookiewarrior.lobby.commands.CMD_Mute;
 import de.mrcookiewarrior.lobby.commands.CMD_Warp;
+import de.mrcookiewarrior.lobby.listener.ChatListener;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
 import de.mrcookiewarrior.lobby.manager.MySQL;
@@ -50,10 +52,12 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new MOTD_Listener(), this);
         pm.registerEvents(new utils_Navigator(), this);
+        pm.registerEvents(new ChatListener(), this);
     }
     public void registerCommands() {
         this.getCommand("ban").setExecutor(new CMD_Ban());
         this.getCommand("warp").setExecutor(new CMD_Warp());
+        this.getCommand("mute").setExecutor(new CMD_Mute());
     }
     @Override
     public void onDisable() {
