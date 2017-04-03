@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
+import ru.tehkode.permissions.bukkit.PermissionsEx;
 
 /**
  *
@@ -18,6 +19,39 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
  */
 public class ChatListener implements Listener {
     
+    @EventHandler
+    public void onPrefix(AsyncPlayerChatEvent e) {
+        Player p = e.getPlayer();
+        String msg = e.getMessage();
+        
+        if(PermissionsEx.getUser(p).inGroup("Owner")) {
+            e.setFormat(Main.getLobby().Owner + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Admin")) {
+            e.setFormat(Main.getLobby().Admin + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("SrDeveloper")) {
+            e.setFormat(Main.getLobby().SrDev + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Developer")) {
+            e.setFormat(Main.getLobby().Dev + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("SrModerator")) {
+            e.setFormat(Main.getLobby().SrMod + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Moderator")) {
+            e.setFormat(Main.getLobby().Mod + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("SrSupporter")) {
+            e.setFormat(Main.getLobby().SrSupp + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Supporter")) {
+            e.setFormat(Main.getLobby().Supp + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("SrBuilder")) {
+            e.setFormat(Main.getLobby().SrBuilder + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Builder")) {
+            e.setFormat(Main.getLobby().Builder + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("YouTuber")) {
+            e.setFormat(Main.getLobby().YouTuber + p.getDisplayName() + " §7» " + msg);
+        } else if(PermissionsEx.getUser(p).inGroup("Premium")) {
+            e.setFormat(Main.getLobby().Premium + p.getDisplayName() + " §7» " + msg);
+        } else {
+            e.setFormat(Main.getLobby().Spieler + p.getDisplayName() + " §7» " + msg);
+        }
+    }
     @EventHandler
     public void onMute(AsyncPlayerChatEvent e) {
         if(MuteManager.isMuted(e.getPlayer().getUniqueId().toString())) {
