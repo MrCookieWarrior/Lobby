@@ -21,6 +21,8 @@ Lobby:
     Forum: "&6YourServer.net"
     TeamSpeak: "&2YourServer.net"
     LevelName: "world"
+    AllowBlockBreak: false
+    AllowBlockPlace: false
 ##############################################################
 Messages:
     JoinMessage: "&e%player% &aJoined the game!"

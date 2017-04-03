@@ -11,6 +11,7 @@ import de.mrcookiewarrior.lobby.commands.CMD_Kick;
 import de.mrcookiewarrior.lobby.commands.CMD_Mute;
 import de.mrcookiewarrior.lobby.commands.CMD_Unban;
 import de.mrcookiewarrior.lobby.commands.CMD_Unmute;
+import de.mrcookiewarrior.lobby.listener.BlockListener;
 import de.mrcookiewarrior.lobby.listener.ChatListener;
 import de.mrcookiewarrior.lobby.listener.MOTD_Listener;
 import de.mrcookiewarrior.lobby.listener.PlayerListener;
@@ -52,6 +53,7 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new PlayerListener(), this);
         pm.registerEvents(new MOTD_Listener(), this);
         pm.registerEvents(new ChatListener(), this);
+        pm.registerEvents(new BlockListener(), this);
     }
     public void registerCommands() {
         this.getCommand("ban").setExecutor(new CMD_Ban());
@@ -104,6 +106,8 @@ public class Main extends JavaPlugin {
     public boolean AllowWeatherChange = getConfig().getBoolean("Lobby.AllowWeatherChange");
     public boolean AllowMobSpawning = getConfig().getBoolean("Lobby.AllowMobSpawming");
     public boolean AllowPremiumChat = getConfig().getBoolean("Lobby.AllowPremiumChat");
+    public boolean AllowBlockBreak = getConfig().getBoolean("Lobby.AllowBlockBreak");
+    public boolean AllowBlockPlace = getConfig().getBoolean("Lobby.AllowBlockPlace");
     public String Owner = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Group-Prefix.Owner"));
     public String Admin = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Group-Prefix.Admin"));
     public String SrDev = ChatColor.translateAlternateColorCodes('&', getConfig().getString("Group-Prefix.SrDeveloper"));
