@@ -22,20 +22,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
  * @author BungeeDev
  */
 public class PlayerListener implements Listener {
-    @EventHandler
-    public void onJoin(PlayerJoinEvent e) {
-        ScoreboardManager.setJoinScoreboard(e.getPlayer());
-        sendJoinTabManager.createNormalTabList();
-        ItemAPI.setLobbyItem(e.getPlayer());
-        TitleAPI.sendJoinTitle(e.getPlayer(), Integer.valueOf(70), Integer.valueOf(40), Integer.valueOf(50), Main.getLobby().TitleHeader, Main.getLobby().TitleFooter);
-        if(Main.getLobby().AllowJoinMessage == true) {
-            String join = Main.getLobby().JoinMessage;
-            join = join.replaceFirst("%player%", e.getPlayer().getDisplayName());
-            e.setJoinMessage(join);
-        } else {
-            e.setJoinMessage(null);
-        }
-    }
+    
     @EventHandler
     public void onLogin(PlayerLoginEvent e) {
         if(BanManager.isBanned(e.getPlayer().getUniqueId().toString())) {
@@ -62,6 +49,20 @@ public class PlayerListener implements Listener {
             }
         }
     }
+    @EventHandler
+    public void onJoin(PlayerJoinEvent e) {
+        ScoreboardManager.setJoinScoreboard(e.getPlayer());
+        sendJoinTabManager.createNormalTabList();
+        ItemAPI.setLobbyItem(e.getPlayer());
+        TitleAPI.sendJoinTitle(e.getPlayer(), Integer.valueOf(70), Integer.valueOf(40), Integer.valueOf(50), Main.getLobby().TitleHeader, Main.getLobby().TitleFooter);
+        if(Main.getLobby().AllowJoinMessage == true) {
+            String join = Main.getLobby().JoinMessage;
+            join = join.replaceFirst("%player%", e.getPlayer().getDisplayName());
+            e.setJoinMessage(join);
+        } else {
+            e.setJoinMessage(null);
+        }
+    }    
     @EventHandler
     public void onQuit(PlayerQuitEvent e) {
         if(Main.getLobby().AllowQuitMessage == true) {
